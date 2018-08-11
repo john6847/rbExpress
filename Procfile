@@ -1,1 +1,1 @@
-"web: ./build/install/RbExpress/bin/RbExpress" 
+"web: ./build/install/waterquality/bin/waterquality"
