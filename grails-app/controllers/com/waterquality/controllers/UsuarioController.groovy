@@ -1,11 +1,9 @@
 package com.waterquality.controllers
 
-import com.waterquality.commands.AsignarDispositivoForm
 
 import com.waterquality.domains.seguridad.Perfil
 import com.waterquality.domains.seguridad.Usuario
 import com.waterquality.domains.seguridad.UsuarioPerfil
-import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(["ROLE_ADMIN", "ROLE_USUARIO"])
