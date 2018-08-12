@@ -11,8 +11,6 @@ class BootStrap {
 
     def init = { servletContext ->
 
-        println "Inicializando la Aplicación"
-
         Usuario usuario =Usuario.findByUsername("admin") ? null :new Usuario(apellido: "N/A",email:"admin@gmail.com",username: "admin", password: "admin", nombre: "Administrador",telefono: "N/A").save(flush: true, failOnError: true)
 
         if(usuario) {
@@ -46,9 +44,9 @@ class BootStrap {
 
         Sucursal sucursal_santiago=new Sucursal(nombre: "SantiadoExpress",direccion: "Santiago de los caballeros",ciudad: "Santiago",numeroTelefono: "8295806847").save(flush:true,failOnError:true)
         Sucursal sucursal_caboh=new Sucursal(nombre: "CaboHaitianoExpress",direccion: "Cabo H",ciudad: "Cabo Haitiano",numeroTelefono: "7117536").save(flush:true,failOnError:true)
-        Envio envio=new Envio(nombreRemitente:"John",telefonoRemitente: "829",
-                        nombreDestinatario: "Esaus",telefonoDestinatario: "711",puntoOrigin:sucursal_santiago,
-                        puntoDestino: sucursal_caboh,nombrePaquete:"Air Condition",precioPaquete:8000,pesoPaquete:4,precioTotalEnvio: 1000).save(flush:true,failOnError:true)
+//        Envio envio=new Envio(nombreRemitente:"John",telefonoRemitente: "829",
+//                        nombreDestinatario: "Esaus",telefonoDestinatario: "711",puntoOrigin:sucursal_santiago,
+//                        puntoDestino: sucursal_caboh,nombrePaquete:"Air Condition",precioPaquete:8000,pesoPaquete:4,precioTotalEnvio: 1000).save(flush:true,failOnError:true)
 
 
     }
