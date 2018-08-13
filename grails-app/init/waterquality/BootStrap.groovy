@@ -41,14 +41,14 @@ class BootStrap {
         }
 
 
+        Sucursal sucursal_santiago=Sucursal.findByNombre("SantiagoExpress") ? null: new Sucursal(nombre: "SantiagoExpress",direccion: "Santiago de los caballeros",ciudad: "Santiago",numeroTelefono: "8295806847").save(flush:true,failOnError:true)
+        Sucursal sucursal_caboh=Sucursal.findByNombre("CaboHaitianoExpress") ? null: new Sucursal(nombre: "CaboHaitianoExpress",direccion: "Cabo H",ciudad: "Cabo Haitiano",numeroTelefono: "7117536").save(flush:true,failOnError:true)
 
-        Sucursal sucursal_santiago=new Sucursal(nombre: "SantiadoExpress",direccion: "Santiago de los caballeros",ciudad: "Santiago",numeroTelefono: "8295806847").save(flush:true,failOnError:true)
-        Sucursal sucursal_caboh=new Sucursal(nombre: "CaboHaitianoExpress",direccion: "Cabo H",ciudad: "Cabo Haitiano",numeroTelefono: "7117536").save(flush:true,failOnError:true)
+
         Envio envio=new Envio(nombreRemitente:"John",telefonoRemitente: "829",
-                        nombreDestinatario: "Esaus",telefonoDestinatario: "711",puntoOrigin:sucursal_santiago,
-                        puntoDestino: sucursal_caboh,nombrePaquete:"Air Condition",precioPaquete:8000,pesoPaquete:4,precioTotalEnvio: 1000).save(flush:true,failOnError:true)
-
-
+                        nombreDestinatario: "Esaus",telefonoDestinatario: "711",puntoOrigin:Sucursal?.findByNombre("SantiagoExpress"),
+                        puntoDestino: Sucursal.findByNombre("CaboHaitianoExpress"),nombrePaquete:"Air Condition",precioPaquete:8000,pesoPaquete:4,precioTotalEnvio: 1000,
+                        empleado: Usuario?.findByUsername('admin'),fechaEnvio: new Date()).save(flush:true,failOnError:true)
     }
     def destroy = {
     }

@@ -185,6 +185,22 @@
                         </a>
                     </li>
 
+            <li class="treeview">
+                <a href="#">
+
+                    <i class="fa fa-bus"></i> <span>COLIS</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+
+                <ul class="treeview-menu">
+                    <li><a href="/envios/crearEnvio"><i class="fa fa-circle-o"></i> Envoyer Colis</a></li>
+                    <li><a href="/envios/enviosIndex"><i class="fa fa-circle-o"></i> Livraison en cours</a></li>
+                    <li><a href="/envios/enviosIndexEntregados"><i class="fa fa-circle-o"></i> Colis déjà livrés</a></li>
+                </ul>
+            </li>
+
 
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
                     <li class="treeview">
@@ -198,7 +214,7 @@
                         <ul class="treeview-menu">
                             <li><a href="/usuario/usuarioIndex"><i class="fa fa-circle-o"></i> Utilizateurs</a></li>
                             <li><a href="/sucursales/index"><i class="fa fa-circle-o"></i> Succursales</a></li>
-                            <li><a href="/parametro/parametroIndex"><i class="fa fa-circle-o"></i> Types de colis</a></li>
+                            %{--<li><a href="/parametro/parametroIndex"><i class="fa fa-circle-o"></i> Types de colis</a></li>--}%
 
                         </ul>
                     </li>
@@ -218,9 +234,9 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/pais/paisIndex"><i class="fa fa-circle-o"></i> País </a></li>
-                            <li><a href="/ciudad/ciudadIndex"><i class="fa fa-circle-o"></i> Ciudad </a></li>
-                            <li><a href="/sector/sectorIndex"><i class="fa fa-circle-o"></i> Sector </a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Loading </a></li>
+                            %{--<li><a href="/ciudad/ciudadIndex"><i class="fa fa-circle-o"></i> Ciudad </a></li>--}%
+                            %{--<li><a href="/sector/sectorIndex"><i class="fa fa-circle-o"></i> Sector </a></li>--}%
 
                         </ul>
                     </li>

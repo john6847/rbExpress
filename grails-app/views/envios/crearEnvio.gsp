@@ -131,7 +131,7 @@
                     <div class="form-group">
                         <label>Détails supplémentaires</label>
                         <div class="input-group">
-                            <textarea id="detalles_adicionales" cols="93" rows="5" placeholder="Espace disponible pour ecrire n'importe quelle detalle."></textarea>
+                            <textarea id="detalles_adicionales" name="detallesAdicionales" cols="93" rows="5" placeholder="Espace disponible pour ecrire n'importe quelle detalle."></textarea>
                         </div>
                     </div>
                 </div>
@@ -165,22 +165,34 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="peso_paquete">Poids du colis</label>
+                            <div class="input-group">
+                                <input type="text" name="peso_paquete" id="peso_paquete" class="form-control" data-validaton="length" data-validation="2-25">
+                            </div>
+                        </div>
+
                         <div class="checkbox">
                             <label>
-                                <g:checkBox name="conValor" id="conValor"/> ¿ conValor?
+                                <g:checkBox name="conValor" id="conValor"/> ¿ conValor? <small> <b>Si vous cliquez sur l'option avec valeur, le prix de l'envoi sera automatique.</b></small>
                             </label>
                         </div>
 
 
+                        %{--<div class="form-group" id="precio_envio_">--}%
                         <div class="form-group">
-                            <label for="precio_envio">Prix total de l'envoi</label>
+                            <label for="precio_envio" id="precio_envio_">Prix total de l'envoi personalise</label>
+                            <label for="precio_envio" style="display: none" id="precio_envio_v">Prix total de l'envoi automatique</label>
                             <input placeholder="Prix total" type="text" id="precio_envio" name="precio_envio" class="form-control" data-validation="length" data-validation-length="2-25">
                         </div>
+
+%{--                        <div class="form-group" style="display: none" id="precio_envio_v">
+                            <label for="precio_envio">Prix total de l'envoi automatique</label>
+                            <input placeholder="Prix total" type="text" id="precio_envio_valor" name="precio_envio" class="form-control" data-validation="length" data-validation-length="2-25">
+                        </div>--}%
                     </div>
 
                     </div>
-
-
 
                 </div>
 
@@ -198,6 +210,22 @@
     $.validate({
         lang : 'es',
         modules : 'security'
+    });
+</script>
+
+<script>
+    $('#conValor').change(function() {
+        if(this.checked) {
+            let precioTotalEnvio=$('#precioPaquete').val()*0.15;
+
+            $('#precio_envio').val(precioTotalEnvio)
+            $("#precio_envio_v").css("display", "");
+            $("#precio_envio_").css("display","None")
+        }
+        if(!this.checked){
+            $("#precio_envio_v").css("display","None")
+            $("#precio_envio_").css("display","")
+        }
     });
 </script>
 

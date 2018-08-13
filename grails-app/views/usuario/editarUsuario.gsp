@@ -143,31 +143,15 @@
                             %{--</div>--}%
                         %{--</div>--}%
 
-                        <div class="form-group">
-                            <label>Direccion</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-map-marker"></i>
-                                </div>
-                                <g:if test="${usuario.username=="admin"}">
-                                    <g:select disabled="disabled" onChange="getCiudades();"  noSelection="['':'Seleccione un pais']" class="form-control" id="pais" name="pais" from="" optionKey="id" optionValue="nombrePais" data-validation="required"/>
-                                    <g:select disabled="disabled" onChange="getSectores();" noSelection="['':'Seleccione una ciudad']" class="form-control" id="ciudad" name="ciudad" from="" optionKey="id" optionValue="nombreCiudad" data-validation="required"/>
-                                    <g:select disabled="disabled" noSelection="['':'Seleccione un sector']" class="form-control" id="sector" name="sector" from="" optionKey="id" optionValue="nombreSector" data-validation="required"/>
+                        %{--<div class="form-group">--}%
+                            %{--<label>Direccion</label>--}%
+                            %{----}%
+                                    %{--<input value="${usuario}" id="calle" name="calle" type="text" placeholder="Calle" class="form-control" data-validation="required">--}%
 
-                                    <input disabled="disabled" id="calle" name="calle" type="text" placeholder="Calle" class="form-control" data-validation="required">
+                                %{--</g:else>--}%
 
-                                </g:if>
-                                <g:else>
-                                    <g:select onChange="getCiudades();"  value="${usuario.direccion.sector.ciudad.pais.id}" class="form-control" id="pais" name="pais" from="${listadoPais}" optionKey="id" optionValue="nombrePais" data-validation="required"/>
-                                    <g:select onChange="getSectores();" value="${usuario.direccion.sector.ciudad.id}" class="form-control" id="ciudad" name="ciudad" from="${listadoCiudad}" optionKey="id" optionValue="nombreCiudad" data-validation="required"/>
-                                    <g:select value="${usuario.direccion.sector.id}" class="form-control" id="sector" name="sector" from="${listadoSector}" optionKey="id"  optionValue="nombreSector" data-validation="required"/>
-
-                                    <input value="${usuario.direccion.calle}" id="calle" name="calle" type="text" placeholder="Calle" class="form-control" data-validation="required">
-
-                                </g:else>
-
-                            </div>
-                        </div>
+                            %{--</div>--}%
+                        %{--</div>--}%
 
                         <div class="checkbox">
                             <label>

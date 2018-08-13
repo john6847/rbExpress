@@ -4,6 +4,7 @@ import com.waterquality.domains.seguridad.Usuario
 
 class Envio {
 
+
     String nombreRemitente
     String telefonoRemitente
 
@@ -13,14 +14,20 @@ class Envio {
     Sucursal puntoOrigin
     Sucursal puntoDestino
 
+    Date fechaEnvio
+    Usuario empleado
+
+
 //    TipoPaquete tipoPaquete
 
     String nombrePaquete
     BigDecimal precioPaquete
     BigDecimal pesoPaquete
     String detallesAdicionales
+    String numeroEnvio="ENV-"
 
     BigDecimal precioTotalEnvio=0.0
+    BigDecimal personalizacionPorcentaje=0.15;
 
     boolean conValor=false
     boolean entregado=false
@@ -36,5 +43,6 @@ class Envio {
 
     static constraints = {
         detallesAdicionales nullable: true
+        numeroEnvio nullable: true
     }
 }

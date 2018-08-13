@@ -19,11 +19,11 @@
 
     <div class="container">
 
-        <div class="row " style="margin-top: 100px;margin-left: 50px;">
+        %{--<div class="row " style="margin-top: 100px;margin-left: 50px;">
             <div class="col-md-6">
                 <div class="card" style="width: 37rem;background-color: white">
                     <asset:image class="card-img-top" src="/201f003d1af7241fc1188d63a9402385.png" width="368" height="300"/>
-                    %{--<img class="card-img-top" width="368" height="300" src="../assets/images/201f003d1af7241fc1188d63a9402385.png" alt="Mesa">--}%
+                    --}%%{--<img class="card-img-top" width="368" height="300" src="../assets/images/201f003d1af7241fc1188d63a9402385.png" alt="Mesa">--}%%{--
                     <div class="card-body">
 
                         <h2 class="card-title">COLIS</h2>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-
+--}%
             %{--<div class="col-md-6">--}%
                 %{--<div class="card" style="width: 18rem;">--}%
                     %{--<img class="card-img-top" width="400" height="500" src="https://preview.ibb.co/fH4iTz/pouring_cream_into_coffee_4460x4460.jpg" alt="Mesa">--}%

@@ -48,7 +48,6 @@
                         <th class="bg-info">Prenom</th>
                         <th class="bg-info">Nom d'utilizateur</th>
                         <th class="bg-info">Telephone</th>
-                        <th class="bg-info">Actions</th>
                         <th class="bg-info">        </th>
                         <th class="bg-info">        </th>
 
@@ -83,7 +82,6 @@
                         <th class="bg-info">Prenom</th>
                         <th class="bg-info">Nom d'utilizateur</th>
                         <th class="bg-info">Telephone</th>
-                        <th class="bg-info">Actions</th>
                         <th class="bg-info">        </th>
                         <th class="bg-info">        </th>
 

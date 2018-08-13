@@ -12,6 +12,7 @@ class Usuario {
     boolean envioCorreoUltimoEstado=false
 
 
+
     //Datos genericos del dominio.
     boolean habilitado = true;
     String creadoPor = "sistemas"
