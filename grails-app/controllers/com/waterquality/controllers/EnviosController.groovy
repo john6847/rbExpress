@@ -1,7 +1,6 @@
 package com.waterquality.controllers
 
 import com.waterquality.PrintLy
-import com.waterquality.Printer
 import com.waterquality.domains.Envio
 import com.waterquality.domains.Sucursal
 import com.waterquality.domains.seguridad.Usuario
