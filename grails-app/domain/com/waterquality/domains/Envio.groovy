@@ -4,7 +4,7 @@ import com.waterquality.domains.seguridad.Usuario
 
 class Envio {
 
-
+    String identificador
     String nombreRemitente
     String telefonoRemitente
 

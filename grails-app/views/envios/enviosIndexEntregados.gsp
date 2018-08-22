@@ -53,7 +53,6 @@
                     <th class="bg-info">Origine du colis</th>
                     <th class="bg-info">Destination du colis</th>
                     <th class="bg-info">        </th>
-                    <th class="bg-info">        </th>
 
 
                 </tr>
@@ -68,10 +67,6 @@
                         <td>${envio.telefonoDestinatario}</td>
                         <td>${envio.puntoOrigin.nombre}</td>
                         <td>${envio.puntoDestino.nombre}</td>
-                        <td>
-                            <g:link action="editarEnvio" params="[idEnvio: envio.id]"><button type="summit" class="btn btn-block btn-warning btn-xs">Editer</button></g:link>
-                        </td>
-
                         <td>
                             <g:link action="visualizarEnvio" params="[idEnvio: envio.id]"><button type="button"  class="fa fa-eye"></button></g:link>
                         </td>
@@ -88,7 +83,6 @@
                     <th class="bg-info">Telephone du Destinataire</th>
                     <th class="bg-info">Origine du colis</th>
                     <th class="bg-info">Destination du colis</th>
-                    <th class="bg-info">        </th>
                     <th class="bg-info">        </th>
 
 

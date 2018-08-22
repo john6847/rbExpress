@@ -28,6 +28,7 @@ public class PrintLy {
         pageFormat.setOrientation(PageFormat.PORTRAIT);
         Paper pPaper = pageFormat.getPaper();
 
+
         pPaper.setImageableArea(0, 0, pPaper.getWidth() , pPaper.getHeight() -2);
         pageFormat.setPaper(pPaper);
 

@@ -1,10 +1,19 @@
 package com.waterquality.controllers
 
 import com.waterquality.PrintLy
+import com.waterquality.Printer
 import com.waterquality.domains.Envio
 import com.waterquality.domains.Sucursal
 import com.waterquality.domains.seguridad.Usuario
 import grails.plugin.springsecurity.annotation.Secured
+
+import javax.print.PrintService
+import javax.swing.JButton
+import javax.swing.JFrame
+import javax.swing.UIManager
+import java.awt.event.WindowAdapter
+import java.awt.event.WindowEvent
+import java.awt.print.PrinterJob
 
 
 @Secured(["ROLE_ADMIN", "ROLE_USUARIO"])
@@ -13,9 +22,12 @@ class EnviosController {
     def springSecurityService
 
     def enviosIndex() {
+
         [listadoEnvios:Envio.findAllByEntregadoAndHabilitado(false,true,
                 [sort: "id", order: "desc"])]
     }
+
+
 
     def enviosIndexEntregados() {
         [listadoEnvios:Envio.findAllByEntregadoAndHabilitado(true,true)]
@@ -49,14 +61,13 @@ class EnviosController {
             con_valor=false
         }
 
-        Envio envio=new Envio(nombreRemitente: remitente,telefonoRemitente: telefono_remitente,nombreDestinatario: destinatario,telefonoDestinatario: telefonoDestinatario,
+        Envio envio=new Envio(identificador:"ENV-000"+(Envio.findAll().size()+1),nombreRemitente: remitente,telefonoRemitente: telefono_remitente,nombreDestinatario: destinatario,telefonoDestinatario: telefonoDestinatario,
                                 puntoOrigin: sucursal_origen,puntoDestino: sucursal_destino,precioTotalEnvio: precioTotal,detallesAdicionales: detallesAdicionales,
                                 fechaEnvio: new Date(),nombrePaquete: nombre_paquete,precioPaquete: precio_paquete,pesoPaquete: pesoPaquete,empleado: usuario,conValor: con_valor).save(flush:true,failOnError:true)
 
 
         //Directamente impirmir?
-//        imprimirFacturaEnvio(envio.id)
-        printEnvio();
+
         redirect(uri:"/envios/enviosIndex")
     }
 
@@ -72,15 +83,13 @@ class EnviosController {
 
     def printEnvio(){
         String Header =
-        """******Resturant Management*******;"
+        """*********Resturant Management*******;"
         + "         Original Receipt        \n;"
         + "---------------------------------\n;"
         + "Product Description              \n;"
         + "Name             Qty       Amount\n;"
 
         + "---------------------------------\n;";
-
-        "\n;---------------------------------\n;"
         + "Total Amount:      Rs.9000\n"
         + "---------------------------------\n;"
         + "---------------------------------\n;"

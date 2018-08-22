@@ -23,7 +23,8 @@
                         "previous": "Anterior",
                         "next": "Siguiente",
                     }
-                }
+                },
+                "order": [[ 0, "desc" ]]
             });
         } );
     </script>
@@ -63,7 +64,7 @@
                 <tbody>
                 <g:each in="${listadoEnvios}" var="envio">
                     <tr>
-                        <td>${envio.id}</td>
+                        <td>${envio.identificador}</td>
                         <td>${envio.nombreRemitente}</td>
                         <td>${envio.nombreDestinatario}</td>
                         <td>${envio.telefonoDestinatario}</td>
@@ -79,7 +80,7 @@
                             <g:link action="visualizarEnvio" params="[idEnvio: envio.id]"><button type="button"  class="fa fa-eye"></button></g:link>
                         </td>
                         <td>
-                            <g:link action="imprimirEnvio" params="[idEnvio: envio.id]"><button type="summit" class="btn btn-block btn-default btn-xs">Imprimer</button></g:link>
+                            <g:link action="printEnvio" params="[idEnvio: envio.id]"><button type="button" class="btn btn-block btn-default btn-xs">Imprimer</button></g:link>
                         </td>
 
 
@@ -124,9 +125,9 @@
             <div class="modal-footer">
                 <g:form method="post" action="entegarPaquete">
                     <input hidden="hidden" id="idEnvio" name="idEnvio">
-                    <button type="submit" class="btn btn-outline pull-left">Si</button>
+                    <button type="submit" class="btn btn-outline pull-left">Oui</button>
                 </g:form>
-                <button type="button" class="btn btn-outline" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-outline" data-dismiss="modal">Non</button>
             </div>
         </div>
     </div>

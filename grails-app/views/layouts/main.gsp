@@ -226,7 +226,7 @@
 
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-cog"></i> <span>Configurations Systemes</span>
+                            <i class="fa fa-cog"></i> <span>Configurations Systeme</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                                 %{--//  <span class="label label-primary pull-right">4</span>--}%
@@ -278,7 +278,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 1.0
         </div>
-        <strong>&copy; 2017- (Manuel Tolentino & John Bienaime) Todos los derechos reservados.</strong>
+        <strong>&copy; 2018- (John Bien-aime) Todos los derechos reservados.</strong>
     </footer>
 
     <!-- Control Sidebar -->

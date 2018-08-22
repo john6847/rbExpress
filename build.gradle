@@ -72,10 +72,13 @@ dependencies {
     compile 'org.webjars:AdminLTE:2.4.0'
 
     compile 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+    compile 'org.grails.plugins:wkhtmltopdf:1.0.0.RC9'
+
 
     //base de datos mysql.
     runtime 'mysql:mysql-connector-java:5.1.34'
     compile 'org.grails.plugins:rendering:2.0.3'
+    compile 'org.grails.plugins:jasper:2.1.0.RC1'
 
     //Apache ActiveMQ
     // https://mvnrepository.com/artifact/org.apache.activemq/activemq-client
